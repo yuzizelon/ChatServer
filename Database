@@ -1,0 +1,18 @@
+CREATE DATABASE chatdb;
+USE chatdb;
+
+-- utenti
+CREATE TABLE utenti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE,
+    password VARCHAR(255)
+);
+
+-- messaggi
+CREATE TABLE messaggi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mittente VARCHAR(50),
+    destinatario VARCHAR(50),
+    messaggio TEXT,
+    data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
